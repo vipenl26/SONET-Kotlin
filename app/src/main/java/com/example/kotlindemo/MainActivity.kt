@@ -1,10 +1,13 @@
 package com.example.kotlindemo
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import kotlin.math.pow
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,22 +15,31 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var btn = findViewById<Button>(R.id.btn)
-        var txt = findViewById<TextView>(R.id.txt);
+        var radiusBlock=findViewById<TextView>(R.id.radiusBlock);
+        var txtBottom=findViewById<TextView>(R.id.txtBottom);
 
         var flag=false;
         btn.setOnClickListener(View.OnClickListener {
             // Code here executes on main thread after user presses button
-            if(flag){
-                txt.text = "Aak is Pak"
-                flag = false;
-            }
-            else {
-                txt.text = "Pak is Aak"
-                flag = true;
-            }
+            var radius:Double=radiusBlock.text.toString().toDouble()
+            val pi=3.14
 
+            var area=pi*radius.pow(2)
+            txtBottom.text="Area of circle is $area"
+
+            closeKeyboard();
         })
 
     }
+
+    private fun closeKeyboard() {
+        val view = this.currentFocus
+        if (view != null) {
+            val imm: InputMethodManager =
+                getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(view.windowToken, 0)
+        }
+    }
+
 }
 

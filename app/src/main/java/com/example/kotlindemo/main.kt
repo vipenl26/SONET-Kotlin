@@ -6,7 +6,7 @@ fun greet(name:String){
 
 fun main(){
     println("hello kotlin")
-//    var name:String="vipen"
-//    greet(name)
-    println("testing android app")
+    var name:String="vipen"
+    greet(name)
+
 }

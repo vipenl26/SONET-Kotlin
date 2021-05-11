@@ -1,4 +1,4 @@
-
+package com.example.kotlindemo
 
 fun main(){
     var s:String="Android Kotlin"
@@ -10,12 +10,4 @@ fun main(){
     println(ff)
     println(pi)
     println(n)
-
-
-//    var arr=arrayOf(1,true,"ironMan",3.14)
-//
-//    var a=arrayOf(10,{0})
-//
-//    print(a.size)
-
 }
