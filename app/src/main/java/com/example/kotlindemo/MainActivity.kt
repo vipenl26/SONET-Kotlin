@@ -18,16 +18,23 @@ class MainActivity : AppCompatActivity() {
         var radiusBlock=findViewById<TextView>(R.id.radiusBlock);
         var txtBottom=findViewById<TextView>(R.id.txtBottom);
 
-        var flag=false;
+
         btn.setOnClickListener(View.OnClickListener {
             // Code here executes on main thread after user presses button
-            var radius:Double=radiusBlock.text.toString().toDouble()
-            val pi=3.14
+            var radius:Double=0.0;
+            try{
+                radius=radiusBlock.text.toString().toDouble()
+                val pi=3.14
 
-            var area=pi*radius.pow(2)
-            txtBottom.text="Area of circle is $area"
+                var area=pi*radius.pow(2)
+                txtBottom.text="Area of circle is $area"
 
+            }
+            catch(e:Throwable){
+                txtBottom.text="enter only digits[0-9 and .].. \n please try again"
+            }
             closeKeyboard();
+
         })
 
     }
