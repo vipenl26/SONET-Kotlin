@@ -33,10 +33,9 @@ class MainActivity : AppCompatActivity() {
             catch(e:Throwable){
                 txtBottom.text="enter only digits[0-9 and .].. \n please try again"
             }
-            closeKeyboard();
+            closeKeyboard()
 
         })
-
     }
 
     private fun closeKeyboard() {
