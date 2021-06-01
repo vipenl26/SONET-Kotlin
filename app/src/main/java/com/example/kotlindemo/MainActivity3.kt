@@ -31,6 +31,7 @@ class MainActivity3 : AppCompatActivity() {
             }
             res+="$n"
             txtView.text=res
+            txtInput.text=""
 
             closeKeyboard()
 
