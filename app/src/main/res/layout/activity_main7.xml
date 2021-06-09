@@ -7,12 +7,13 @@
     tools:context=".MainActivity7">
 
     <androidx.gridlayout.widget.GridLayout
-        android:layout_width="401dp"
-        android:layout_height="409dp"
+        android:id="@+id/gridLayout"
+        android:layout_width="404dp"
+        android:layout_height="339dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="164dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView3"
@@ -115,6 +116,7 @@
             android:tag="33"
             app:layout_column="0"
             app:layout_row="0" />
+
     </androidx.gridlayout.widget.GridLayout>
 
     <TextView
@@ -127,5 +129,17 @@
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="125dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="17dp"
+        android:text="Play Again"
+        android:visibility="gone"
+        android:onClick="playAgain"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

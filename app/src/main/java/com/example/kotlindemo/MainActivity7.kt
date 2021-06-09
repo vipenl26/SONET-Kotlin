@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 
@@ -15,6 +16,25 @@ class MainActivity7 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main7)
+
+    }
+    fun playAgain(view:View){
+        mat=arrayOf(arrayOf(0,0,0),arrayOf(0,0,0),arrayOf(0,0,0))
+        turn=1
+        moves=0
+        gameOver=false
+        findViewById<ImageView>(R.id.b11).setImageResource(0)
+        findViewById<ImageView>(R.id.b12).setImageResource(0)
+        findViewById<ImageView>(R.id.b13).setImageResource(0)
+        findViewById<ImageView>(R.id.b21).setImageResource(0)
+        findViewById<ImageView>(R.id.b22).setImageResource(0)
+        findViewById<ImageView>(R.id.b23).setImageResource(0)
+        findViewById<ImageView>(R.id.b31).setImageResource(0)
+        findViewById<ImageView>(R.id.b32).setImageResource(0)
+        findViewById<ImageView>(R.id.b33).setImageResource(0)
+
+        findViewById<TextView>(R.id.gameStatus).text="Black to Play"
+        findViewById<Button>(R.id.btn).visibility = View.GONE;
 
     }
     fun equals(a:Int,b:Int,c:Int):Boolean{
@@ -45,11 +65,15 @@ class MainActivity7 : AppCompatActivity() {
         val img: ImageView =view as ImageView
         var r:Int= img.tag.toString()[0]-'0'
         var c:Int= img.tag.toString()[1]-'0'
+        if(mat[r-1][c-1]!=0){
+            return
+        }
         mat[r-1][c-1]=turn
-        Log.i("tag","$r $c")
+        //Log.i("tag","$r $c")
 
 
         var st=findViewById<TextView>(R.id.gameStatus)
+        var btn=findViewById<Button>(R.id.btn)
 
         if(turn==1)img.setImageResource(R.drawable.black)
         else img.setImageResource(R.drawable.white)
@@ -57,6 +81,7 @@ class MainActivity7 : AppCompatActivity() {
 
         if(isGame()){
             gameOver=true
+            btn.visibility = View.VISIBLE;
             if(turn==1){
                 st.text="Black Won"
             }
@@ -70,6 +95,7 @@ class MainActivity7 : AppCompatActivity() {
         moves++
         if(moves==9){
             gameOver=true
+            btn.visibility = View.VISIBLE;
             st.text="Draw"
             return
         }
@@ -81,4 +107,5 @@ class MainActivity7 : AppCompatActivity() {
         }
 
     }
+
 }
