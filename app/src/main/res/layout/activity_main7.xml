@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity7">
+
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="401dp"
+        android:layout_height="409dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="164dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="333dp"
+            android:layout_height="334dp"
+            app:layout_column="0"
+            app:layout_row="0"
+            app:srcCompat="@drawable/board" />
+
+        <ImageView
+            android:id="@+id/b11"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:onClick="coinAppear"
+            android:tag="11"
+            app:layout_column="0"
+            app:layout_row="0" />
+
+        <ImageView
+            android:id="@+id/b12"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="120dp"
+            android:onClick="coinAppear"
+            android:tag="12"
+            app:layout_column="0"
+            app:layout_row="0" />
+
+        <ImageView
+            android:id="@+id/b13"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="230dp"
+            android:onClick="coinAppear"
+            android:tag="13"
+            app:layout_column="0"
+            app:layout_row="0" />
+
+        <ImageView
+            android:id="@+id/b21"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="120dp"
+            android:onClick="coinAppear"
+            android:tag="21"
+            app:layout_column="0"
+            app:layout_row="0" />
+
+        <ImageView
+            android:id="@+id/b22"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="120dp"
+            android:onClick="coinAppear"
+            android:tag="22"
+            app:layout_column="0"
+            app:layout_row="0" />
+
+
+        <ImageView
+            android:id="@+id/b23"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="235dp"
+            android:layout_marginTop="120dp"
+            android:onClick="coinAppear"
+            android:tag="23"
+            app:layout_column="0"
+            app:layout_row="0" />
+
+        <ImageView
+            android:id="@+id/b31"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="235dp"
+            android:onClick="coinAppear"
+            android:tag="31"
+            app:layout_column="0"
+            app:layout_row="0" />
+
+        <ImageView
+            android:id="@+id/b32"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="235dp"
+            android:onClick="coinAppear"
+            android:tag="32"
+            app:layout_column="0"
+            app:layout_row="0" />
+
+        <ImageView
+            android:id="@+id/b33"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="235dp"
+            android:layout_marginTop="235dp"
+            android:onClick="coinAppear"
+            android:tag="33"
+            app:layout_column="0"
+            app:layout_row="0" />
+    </androidx.gridlayout.widget.GridLayout>
+
+    <TextView
+        android:id="@+id/gameStatus"
+        android:layout_width="262dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="41dp"
+        android:text="Black to Play"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
